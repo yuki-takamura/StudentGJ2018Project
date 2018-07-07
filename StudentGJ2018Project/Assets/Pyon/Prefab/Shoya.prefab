@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 4801869002351522}
   - component: {fileID: 95323931249529556}
   - component: {fileID: 114228565401976348}
+  - component: {fileID: 143151681692591774}
   m_Layer: 0
   m_Name: Shoya
   m_TagString: Untagged
@@ -767,6 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1385404c82705c641b81236196af5b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSpeed: 0
 --- !u!137 &137605891299505548
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -835,3 +837,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.04911393, y: 0.05028498, z: 0.0000006556511}
     m_Extent: {x: 0.95292383, y: 0.35647383, z: 0.72890526}
   m_DirtyAABB: 0
+--- !u!143 &143151681692591774
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760587443522508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
