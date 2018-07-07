@@ -98,7 +98,7 @@ public class Human : MonoBehaviour
     void Update()
     {
 
-        if (userSelect && isCoupling == false)
+        if (userSelect/* && isCoupling == false*/)
         {
             MoveController();
             return;
@@ -145,6 +145,10 @@ public class Human : MonoBehaviour
     {
         velocity = new Vector3(walkVec.normalized.x * walkSpeed, 0.0f, walkVec.normalized.y * walkSpeed);
 
+        //後で消します
+        transform.position += new Vector3(0, -transform.position.y, 0);
+
+
         if (characterController.isGrounded)
         {
             if (velocity.magnitude > 0.1f)
@@ -158,7 +162,7 @@ public class Human : MonoBehaviour
             }
         }
 
-        Debug.Log(this.name + "   " + velocity);
+    //    Debug.Log(this.name + "   " + velocity);
 
         characterController.Move(velocity * walkSpeed * Time.deltaTime);
     }
@@ -204,8 +208,8 @@ public class Human : MonoBehaviour
         // hit.gameObjectで衝突したオブジェクト情報が得られる
         //プレイヤーが選択中で相手が性別違うなら
         //女性側で制御してしまう
-        Debug.Log("コリダーなう=" + this.gameObject.name);
-        if (other.collider.CompareTag(HumanTag)/*&& userSelect==true*/)
+      //  Debug.Log("コリダーなう=" + this.gameObject.name);
+        if (other.collider.CompareTag(HumanTag)&& userSelect==true&&isCoupling==false)
         {
 
             if (other.gameObject.GetComponent<Human>().GetHumanState == HumanState.Boys)
@@ -244,6 +248,7 @@ public class Human : MonoBehaviour
                 SetWalk();
                 transform.parent = humanPool.transform;
                 //管理しなおす
+                transform.position += new Vector3(0, -transform.position.y, 0);
 
             }
             else
@@ -253,6 +258,7 @@ public class Human : MonoBehaviour
                 couplingHuman.SetWalk();
                 SetWalk();
                 couplingHuman.transform.parent = humanPool.transform;
+                transform.position += new Vector3(0, -transform.position.y, 0);
             }
         }
         else
