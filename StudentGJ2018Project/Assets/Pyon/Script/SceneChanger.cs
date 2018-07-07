@@ -25,8 +25,6 @@ public class SceneChanger : MonoBehaviour
         mainCamera = Camera.main;
         mainCamera.GetComponent<SC_CustomPostEffectBehaviour>().postEffectMaterial.SetFloat("_Threshold", 0);
         counter = 0;
-
-        firstTime = Time.time;
 	}
 	
 	// Update is called once per frame
@@ -37,6 +35,7 @@ public class SceneChanger : MonoBehaviour
             || Input.GetKeyDown(KeyCode.Joystick2Button1)
             || Input.GetKeyDown(KeyCode.Z))
         {
+            firstTime = Time.time;
             isChangingScene = true;
         }
 
