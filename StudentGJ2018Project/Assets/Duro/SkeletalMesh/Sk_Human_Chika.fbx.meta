@@ -30,6 +30,7 @@ ModelImporter:
     100044: QuickRigCharacter_Spine1
     100046: QuickRigCharacter_Spine2
     100048: //RootNode
+    100050: model
     400000: pSphere2
     400002: QuickRigCharacter_Head
     400004: QuickRigCharacter_Hips
@@ -55,10 +56,14 @@ ModelImporter:
     400044: QuickRigCharacter_Spine1
     400046: QuickRigCharacter_Spine2
     400048: //RootNode
+    400050: model
     2100000: M_Shoya
+    2100002: w2_defaultMat1
     4300000: pSphere2
+    4300002: model
     9500000: //RootNode
     13700000: pSphere2
+    13700002: model
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -69,7 +74,7 @@ ModelImporter:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -77,7 +82,22 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'QuickRigCharacter_LeftUpLeg'
+      : position error = 21.685078 mm\n\t'QuickRigCharacter_LeftLeg' : position error
+      = 32.687984 mm\n\t'QuickRigCharacter_LeftFoot' : position error = 28.018665
+      mm\n\t'QuickRigCharacter_LeftToeBase' : position error = 17.375950 mm\n\t'QuickRigCharacter_RightUpLeg'
+      : position error = 21.685078 mm\n\t'QuickRigCharacter_RightLeg' : position error
+      = 32.688278 mm\n\t'QuickRigCharacter_RightFoot' : position error = 28.018305
+      mm\n\t'QuickRigCharacter_RightToeBase' : position error = 17.376049 mm\n\t'QuickRigCharacter_Spine'
+      : position error = 8.840598 mm\n\t'QuickRigCharacter_Spine1' : position error
+      = 8.777008 mm\n\t'QuickRigCharacter_Spine2' : position error = 8.777099 mm\n\t'QuickRigCharacter_LeftShoulder'
+      : position error = 25.565819 mm\n\t'QuickRigCharacter_LeftForeArm' : position
+      error = 52.037670 mm\n\t'QuickRigCharacter_LeftHand' : position error = 5.280973
+      mm\n\t'QuickRigCharacter_RightShoulder' : position error = 25.565809 mm\n\t'QuickRigCharacter_RightForeArm'
+      : position error = 52.037640 mm\n\t'QuickRigCharacter_RightHand' : position
+      error = 5.281300 mm\n\t'QuickRigCharacter_Neck' : position error = 34.514500
+      mm\n\t'QuickRigCharacter_Head' : position error = 39.784512 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
