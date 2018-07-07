@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 76f4b899439bbb541b3eb6b82ffaa5f5
+timeCreated: 1530958272
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Character_Ctrl:ChestEndEffector
+    100002: Character_Ctrl:ChestOriginEffector
+    100004: Character_Ctrl:Head
+    100006: Character_Ctrl:HeadEffector
+    100008: Character_Ctrl:Hips
+    100010: Character_Ctrl:HipsEffector
+    100012: Character_Ctrl:LeftAnkleEffector
+    100014: Character_Ctrl:LeftArm
+    100016: Character_Ctrl:LeftElbowEffector
+    100018: Character_Ctrl:LeftFoot
+    100020: Character_Ctrl:LeftForeArm
+    100022: Character_Ctrl:LeftHand
+    100024: Character_Ctrl:LeftHipEffector
+    100026: Character_Ctrl:LeftKneeEffector
+    100028: Character_Ctrl:LeftLeg
+    100030: Character_Ctrl:LeftShoulderEffector
+    100032: Character_Ctrl:LeftUpLeg
+    100034: Character_Ctrl:LeftWristEffector
+    100036: Character_Ctrl:Reference
+    100038: Character_Ctrl:RightAnkleEffector
+    100040: Character_Ctrl:RightArm
+    100042: Character_Ctrl:RightElbowEffector
+    100044: Character_Ctrl:RightFoot
+    100046: Character_Ctrl:RightForeArm
+    100048: Character_Ctrl:RightHand
+    100050: Character_Ctrl:RightHipEffector
+    100052: Character_Ctrl:RightKneeEffector
+    100054: Character_Ctrl:RightLeg
+    100056: Character_Ctrl:RightShoulderEffector
+    100058: Character_Ctrl:RightUpLeg
+    100060: Character_Ctrl:RightWristEffector
+    100062: Character_Ctrl:Spine
+    100064: Character_Ctrl:Spine1
+    100066: Chu_Head
+    100068: Chu_Hips
+    100070: Chu_LeftArm
+    100072: Chu_LeftFoot
+    100074: Chu_LeftForeArm
+    100076: Chu_LeftHand
+    100078: Chu_LeftLeg
+    100080: Chu_LeftUpLeg
+    100082: Chu_Reference
+    100084: Chu_RightArm
+    100086: Chu_RightFoot
+    100088: Chu_RightForeArm
+    100090: Chu_RightHand
+    100092: Chu_RightLeg
+    100094: Chu_RightUpLeg
+    100096: Chu_Spine
+    100098: Chu_Spine1
+    100100: Chu_Tail1
+    100102: Chu_Tail2
+    100104: Chu_Tail3
+    100106: Chu_Tail4
+    100108: model
+    100110: //RootNode
+    400000: Character_Ctrl:ChestEndEffector
+    400002: Character_Ctrl:ChestOriginEffector
+    400004: Character_Ctrl:Head
+    400006: Character_Ctrl:HeadEffector
+    400008: Character_Ctrl:Hips
+    400010: Character_Ctrl:HipsEffector
+    400012: Character_Ctrl:LeftAnkleEffector
+    400014: Character_Ctrl:LeftArm
+    400016: Character_Ctrl:LeftElbowEffector
+    400018: Character_Ctrl:LeftFoot
+    400020: Character_Ctrl:LeftForeArm
+    400022: Character_Ctrl:LeftHand
+    400024: Character_Ctrl:LeftHipEffector
+    400026: Character_Ctrl:LeftKneeEffector
+    400028: Character_Ctrl:LeftLeg
+    400030: Character_Ctrl:LeftShoulderEffector
+    400032: Character_Ctrl:LeftUpLeg
+    400034: Character_Ctrl:LeftWristEffector
+    400036: Character_Ctrl:Reference
+    400038: Character_Ctrl:RightAnkleEffector
+    400040: Character_Ctrl:RightArm
+    400042: Character_Ctrl:RightElbowEffector
+    400044: Character_Ctrl:RightFoot
+    400046: Character_Ctrl:RightForeArm
+    400048: Character_Ctrl:RightHand
+    400050: Character_Ctrl:RightHipEffector
+    400052: Character_Ctrl:RightKneeEffector
+    400054: Character_Ctrl:RightLeg
+    400056: Character_Ctrl:RightShoulderEffector
+    400058: Character_Ctrl:RightUpLeg
+    400060: Character_Ctrl:RightWristEffector
+    400062: Character_Ctrl:Spine
+    400064: Character_Ctrl:Spine1
+    400066: Chu_Head
+    400068: Chu_Hips
+    400070: Chu_LeftArm
+    400072: Chu_LeftFoot
+    400074: Chu_LeftForeArm
+    400076: Chu_LeftHand
+    400078: Chu_LeftLeg
+    400080: Chu_LeftUpLeg
+    400082: Chu_Reference
+    400084: Chu_RightArm
+    400086: Chu_RightFoot
+    400088: Chu_RightForeArm
+    400090: Chu_RightHand
+    400092: Chu_RightLeg
+    400094: Chu_RightUpLeg
+    400096: Chu_Spine
+    400098: Chu_Spine1
+    400100: Chu_Tail1
+    400102: Chu_Tail2
+    400104: Chu_Tail3
+    400106: Chu_Tail4
+    400108: model
+    400110: //RootNode
+    2100000: lambert2
+    4300000: model
+    7400000: Chu_Idle
+    7400002: Chu_Run
+    9500000: //RootNode
+    13700000: model
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 3b59c1c9d25d6ff44bc93470071fe02f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
