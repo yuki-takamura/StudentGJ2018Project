@@ -17,7 +17,16 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
 
     bool stopTime = false;
 
+    [SerializeField]//一旦
     bool nowSecondRound = false;
+    public bool NowSecondRound//いい名前思いつかない
+    {
+        get
+        {
+            return nowSecondRound;
+        }
+    }
+
 
     int onePlayerPoint = 0;
     int towPlayerPoint = 0;

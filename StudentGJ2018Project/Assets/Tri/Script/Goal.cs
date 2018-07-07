@@ -30,7 +30,7 @@ public class Goal : MonoBehaviour
                 //削除パーティクル的なの
 
                 //ヒューマン管理システムに渡して削除？？
-
+                HumanManager.Instance.DeleteHuman(human,human.CouplingHuman);
 
             }
         }

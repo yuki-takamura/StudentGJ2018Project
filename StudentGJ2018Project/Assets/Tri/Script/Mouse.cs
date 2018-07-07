@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mouse : MonoBehaviour {
+public class Mouse : MonoBehaviour
+{
 
     CharacterController characterController;
 
@@ -13,17 +14,36 @@ public class Mouse : MonoBehaviour {
 
     Animator animator;
 
-    void Start () {
+
+    string onePlayertV = "Vertical 1";
+    string onePlayertH = "Horizontal 1";
+
+    string twoPlayertV = "Vertical 2";
+    string twoPlayertH = "Horizontal 2";
+
+    void Start()
+    {
         characterController = GetComponent<CharacterController>();
-	}
+    }
 
     void Update()
     {
-        // Joy-Con(L)
-        var h2 =-Input.GetAxis("Vertical 2");
-        var v2 = Input.GetAxis("Horizontal 2");
+        // Joy-Con(L)        
+        float h2;
+        float v2;
+        if (GameSystem.Instance.NowSecondRound == false)
+        {
+            h2 = -Input.GetAxis(twoPlayertV);
+            v2 = Input.GetAxis(twoPlayertH);
 
-        transform.position += new Vector3(h2*0.1f, 0, v2 * 0.1f);
+        }
+        else
+        {
+            h2 = Input.GetAxis(onePlayertV);
+            v2 = -Input.GetAxis(onePlayertH);
+        }
+
+        transform.position += new Vector3(h2 * 0.1f, 0, v2 * 0.1f);
 
         return;
         //TODO デバッグ用　あとで消す

@@ -768,7 +768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userSelect: 0
-  humanState: 0
+  humanState: 1
   MaxTime: 10
   MinTime: 7
   humanPool: {fileID: 0}

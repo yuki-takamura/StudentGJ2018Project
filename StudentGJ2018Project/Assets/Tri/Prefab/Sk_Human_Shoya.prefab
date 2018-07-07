@@ -768,12 +768,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f4094586b20b3498283c3425465528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userSelect: 1
-  humanState: 1
-  MaxTime: 10
-  MinTime: 7
+  userSelect: 0
+  humanState: 0
+  MaxTime: 5
+  MinTime: 3
   humanPool: {fileID: 0}
-  walkSpeed: 2
+  walkSpeed: 1
 --- !u!137 &137461767711659828
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
