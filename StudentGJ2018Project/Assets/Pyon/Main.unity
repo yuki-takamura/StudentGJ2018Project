@@ -187,7 +187,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4789593801201492, guid: 723ef17899295f24f80f1315d9278ce9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4789593801201492, guid: 723ef17899295f24f80f1315d9278ce9, type: 2}
       propertyPath: m_LocalPosition.y
@@ -215,12 +215,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4789593801201492, guid: 723ef17899295f24f80f1315d9278ce9, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 723ef17899295f24f80f1315d9278ce9, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1572448917
+--- !u!1001 &2072947183
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -257,7 +257,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4801869002351522, guid: d227ca0d52b3a2342bad67d85c64a544, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760587443522508, guid: d227ca0d52b3a2342bad67d85c64a544, type: 2}
+      propertyPath: m_Name
+      value: Sk_Human_Shoya
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d227ca0d52b3a2342bad67d85c64a544, type: 2}

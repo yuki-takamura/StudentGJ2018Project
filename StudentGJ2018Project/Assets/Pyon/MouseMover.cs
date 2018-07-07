@@ -15,5 +15,11 @@ public class MouseMover : MonoBehaviour {
         var v2 = Input.GetAxis("Vertical 2");
 
         transform.position += new Vector3(h2, 0, v2);
-	}
+
+        //TODO デバッグ用　あとで消す
+        if (Input.GetKey(KeyCode.Joystick2Button11))
+        {
+            transform.position = Vector3.zero;
+        }
+    }
 }

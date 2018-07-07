@@ -16,5 +16,11 @@ public class CharacterMover : MonoBehaviour
         var v1 = Input.GetAxis("Vertical 1");
 
         transform.position += new Vector3(h1, 0, v1);
+
+        //TODO デバッグ用　あとで消す
+        if (Input.GetKey(KeyCode.Joystick1Button10))
+        {
+            transform.position = Vector3.zero;
+        }
 	}
 }
