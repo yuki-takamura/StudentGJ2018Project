@@ -1,9 +1,19 @@
 ﻿using UnityEngine;
 
-public class MouseMover : MonoBehaviour {
+public class MouseMover : MonoBehaviour
+{
+    CharacterController characterController;
 
-	// Use this for initialization
-	void Start () {
+    Vector3 velocity;
+
+    [SerializeField]
+    float walkSpeed;
+
+    Animator animator;
+
+    // Use this for initialization
+    void Start ()
+    {
 		
 	}
 	
@@ -21,5 +31,23 @@ public class MouseMover : MonoBehaviour {
         {
             transform.position = Vector3.zero;
         }
+
+        if (characterController.isGrounded)
+        {
+            velocity = new Vector3(h2, 0.0f, v2);
+
+            if (velocity.magnitude > 0.1f)
+            {
+                animator.SetFloat("Speed", velocity.magnitude);
+                transform.LookAt(transform.position + velocity);
+            }
+            else
+            {
+                animator.SetFloat("Speed", 0f);
+            }
+        }
+
+        velocity.y += Physics.gravity.y * Time.deltaTime;
+        characterController.Move(velocity * walkSpeed * Time.deltaTime);
     }
 }
