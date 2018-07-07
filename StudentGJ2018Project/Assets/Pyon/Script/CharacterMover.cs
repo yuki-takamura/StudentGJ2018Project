@@ -7,7 +7,7 @@ public class CharacterMover : MonoBehaviour
     Vector3 velocity;
 
     [SerializeField]
-    float walkSpeed;
+    float walkSpeed = 1.0f;
 
     Animator animator;
 
@@ -25,7 +25,7 @@ public class CharacterMover : MonoBehaviour
         var h1 = Input.GetAxis("Horizontal 1");
         var v1 = Input.GetAxis("Vertical 1");
 
-        transform.position += new Vector3(h1, 0, v1);
+        velocity = new Vector3(v1, 0.0f, -h1);
 
         //TODO デバッグ用　あとで消す
         if (Input.GetKey(KeyCode.Joystick1Button10))
@@ -35,8 +35,6 @@ public class CharacterMover : MonoBehaviour
 
         if(characterController.isGrounded)
         {
-            velocity = new Vector3(h1, 0.0f, v1);
-
             if(velocity.magnitude > 0.1f)
             {
                 animator.SetFloat("Speed", velocity.magnitude);
