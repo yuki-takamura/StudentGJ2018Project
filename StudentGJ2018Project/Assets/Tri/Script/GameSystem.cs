@@ -82,7 +82,7 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
         if(nowSecondRound==false)
         {
             onwScoreText.text = totalPoint.ToString();
-
+           
         }
         else
         {
@@ -117,5 +117,8 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
         onePlayerPoint = totalPoint;
         limitTime = StartLimitTime;
         nowSecondRound = true;
+
+        
+
     }
 }
