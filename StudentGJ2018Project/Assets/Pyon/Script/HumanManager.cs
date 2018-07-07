@@ -5,9 +5,9 @@ using UnityEngine;
 public class HumanManager : SingletonMonoBehaviour<HumanManager>
 {
     [SerializeField]
-    GameObject humanObj = null;
+    Human humanObj = null;
 
-    List<GameObject> humans = new List<GameObject>();
+    List<Human> humans = new List<Human>();
 
     [SerializeField]
     float stageMin = -1;
@@ -24,30 +24,9 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Q))
-        {
-            //一つ選ぶ
-            SelectHuman();
-        }
-
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            //消す
-            DeleteHuman();
-        }
-
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            //生成する
-            humans.Add(humanObj);
-            float x = Random.Range(stageMin, stageMax);
-            float z = Random.Range(stageMin, stageMax);
-
-            Instantiate(humanObj, new Vector3(x, 0.0f, z), Quaternion.identity);
-        }
 	}
 
-    void SelectHuman()
+    public void SelectHuman()
     {
         if(humans.Count == 0)
         {
@@ -58,13 +37,29 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
         //humans[selectItem]
     }
 
-    void DeleteHuman()
+    public void DeleteHuman(Human men, Human women)
     {
         if (humans.Count == 0)
         {
             return;
         }
 
-        //Destroy();
+        foreach (Human h in humans)
+        {
+            if (h == men)
+                Destroy(men);
+
+            if (h == women)
+                Destroy(women);
+        }
+    }
+
+    public void InstantiateHuman()
+    {
+        humans.Add(humanObj);
+        float x = Random.Range(stageMin, stageMax);
+        float z = Random.Range(stageMin, stageMax);
+
+        Instantiate(humanObj, new Vector3(x, 0.0f, z), Quaternion.identity);
     }
 }
