@@ -70,11 +70,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_Shoya
     second: {fileID: 2100000, guid: 09723b725cf4cdd418afe9460d0021c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: w2_defaultMat1
+    second: {fileID: 2100000, guid: 1c743014c34edce4a9bc68826abaf001, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
