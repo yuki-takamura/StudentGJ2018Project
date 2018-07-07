@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CharacterMover2 : MonoBehaviour {
+public class MouseMover : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,10 +10,6 @@ public class CharacterMover2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        // Joy-Con(R)
-        var h1 = Input.GetAxis("Horizontal 1");
-        var v1 = Input.GetAxis("Vertical 1");
-
         // Joy-Con(L)
         var h2 = Input.GetAxis("Horizontal 2");
         var v2 = Input.GetAxis("Vertical 2");
