@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: ba1d1a6c0428cb748ad387d355a816c1
-timeCreated: 1530950756
+guid: b660c9efa3d8d434980e32f5fe83b4d8
+timeCreated: 1530952625
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert2
+    2100000: M_Foor
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube1
+    4300000: pPlane1
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: 89743dd466d30944895a31d47bbb7f67, type: 2}
+      name: M_Foor
+    second: {fileID: 2100000, guid: 33400bb0919ddfc4289e564dc1205dcd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
