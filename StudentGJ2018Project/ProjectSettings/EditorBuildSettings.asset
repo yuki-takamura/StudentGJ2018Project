@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Pyon/Title.unity
+    guid: 8681daf54848f24409b063f06aa6da76
+  - enabled: 1
+    path: Assets/Pyon/Main.unity
+    guid: 354bf940600e8a547a18965de68ae112
