@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Tri/Scene/M_MoveTest.unity
+    guid: d831e53b4eeabb54e83e50b3d7378660
+  - enabled: 1
     path: Assets/Pyon/Title.unity
     guid: 8681daf54848f24409b063f06aa6da76
   - enabled: 1

@@ -8,9 +8,6 @@ public enum HumanState
     Girls,
 }
 
-
-
-
 public class Human : MonoBehaviour
 {
     [SerializeField]
@@ -27,7 +24,7 @@ public class Human : MonoBehaviour
             isCoupling = value;
         }
     }
-    //ごり押し、カップルにした人間
+
     Human couplingHuman = null;
     public Human CouplingHuman
     {
@@ -37,15 +34,11 @@ public class Human : MonoBehaviour
         }
     }
 
-
     string HumanTag = "Human";
     string MouseTag = "Mouse";
 
     [SerializeField]//一旦
     HumanState humanState;
-
-
-
 
     public HumanState GetHumanState
     {
@@ -66,16 +59,19 @@ public class Human : MonoBehaviour
     float MaxTime = 10f;
     [SerializeField]
     float MinTime = 7f;
-    [SerializeField, Header("移動速度")]
-    float moveLength = 0.01f;
 
     [SerializeField]
     GameObject humanPool;
 
-
-
-
     CharacterController characterController;
+    public CharacterController GetCharacterController
+    {
+        get
+        {
+            return characterController;
+        }
+    }
+
 
     Vector3 velocity;
 
@@ -83,9 +79,6 @@ public class Human : MonoBehaviour
     float walkSpeed = 1.0f;
 
     Animator animator;
-
-
-
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -97,16 +90,16 @@ public class Human : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (userSelect/* && isCoupling == false*/)
+        if (isCoupling && humanState == HumanState.Boys)
+            return;
+        if (userSelect && isCoupling == false)
         {
             MoveController();
             return;
         }
 
 
-        if (isCoupling && humanState == HumanState.Boys)
-            return;
+
 
         //ランダムウォークを書く
 
@@ -162,7 +155,7 @@ public class Human : MonoBehaviour
             }
         }
 
-    //    Debug.Log(this.name + "   " + velocity);
+        //    Debug.Log(this.name + "   " + velocity);
 
         characterController.Move(velocity * walkSpeed * Time.deltaTime);
     }
@@ -203,63 +196,19 @@ public class Human : MonoBehaviour
     }
 
 
+    // void OnCollisionEnter(Collision other)
     void OnControllerColliderHit(ControllerColliderHit other)
     {
         // hit.gameObjectで衝突したオブジェクト情報が得られる
         //プレイヤーが選択中で相手が性別違うなら
         //女性側で制御してしまう
-      //  Debug.Log("コリダーなう=" + this.gameObject.name);
-        if (other.collider.CompareTag(HumanTag)&& userSelect==true&&isCoupling==false)
+        if (other.collider.CompareTag(HumanTag) && userSelect == true && isCoupling == false)
         {
-
-            if (other.gameObject.GetComponent<Human>().GetHumanState == HumanState.Boys)
-            {
-                //カップルにする
-                Debug.Log("カップルになりました");
-                couplingHuman = other.gameObject.GetComponent<Human>();
-                couplingHuman.couplingHuman = this;
-                couplingHuman.IsCoupling = true;
-                this.isCoupling = true;
-                //子オブジェクトにする
-                couplingHuman.transform.parent = transform;
-
-                if (true/*方向キー入力していたらその方向へ動く*/)
-                {
-
-                }
-                else
-                {
-                    //一番近い所へ向かう
-
-                }
-
-
-            }
+            Coupling(other.gameObject);
         }
         else if (other.collider.CompareTag(MouseTag) && IsCoupling == true)
         {
-            //別れさせる
-            if (HumanState.Boys == humanState)
-            {
-                //男だったら
-                isCoupling = false;
-                couplingHuman.isCoupling = false;
-                couplingHuman.SetWalk();
-                SetWalk();
-                transform.parent = humanPool.transform;
-                //管理しなおす
-                transform.position += new Vector3(0, -transform.position.y, 0);
-
-            }
-            else
-            {
-                isCoupling = false;
-                couplingHuman.isCoupling = false;
-                couplingHuman.SetWalk();
-                SetWalk();
-                couplingHuman.transform.parent = humanPool.transform;
-                transform.position += new Vector3(0, -transform.position.y, 0);
-            }
+            HitMouse();
         }
         else
         {
@@ -267,6 +216,92 @@ public class Human : MonoBehaviour
 
 
 
+            if (isCoupling)
+            {
+                //カップルなら一番近いゴールへ向かう
+            }
+
+
+        }
+    }
+
+    private void Coupling(GameObject human)
+    {
+        //Debug.Log("当たりました=" + this.gameObject.name + "   " + other.gameObject.name);
+        //カップルにする
+        Debug.Log("カップルになりました");
+
+        couplingHuman = human.gameObject.GetComponent<Human>();
+        couplingHuman.couplingHuman = this;
+        couplingHuman.IsCoupling = true;
+        this.isCoupling = true;
+    
+        if (this.humanState == HumanState.Boys)
+        {
+            Vector2 vec = new Vector2(transform.position.x - couplingHuman.transform.position.x, transform.position.z - couplingHuman.transform.position.z);
+
+            //離れないと走れないためずらす
+            float separateLength = 0.3f;
+            characterController.Move(
+                new Vector3(
+               vec.normalized.x * separateLength, 0,
+                vec.normalized.y * separateLength));
+
+            //同じ方向で歩く
+            transform.parent = couplingHuman.transform;
+            transform.localEulerAngles = Vector3.zero;
+        }
+        else
+        {
+            Vector2 vec = new Vector2(couplingHuman.transform.position.x - transform.position.x, couplingHuman.transform.position.z - transform.position.z);
+
+            //離れないと走れないためずらす
+            float separateLength = 0.3f;
+            couplingHuman.GetCharacterController.Move(
+                new Vector3(
+               vec.normalized.x * separateLength, 0,
+                vec.normalized.y * separateLength));
+
+            //子オブジェクトにする
+            couplingHuman.transform.parent = transform;
+            couplingHuman.transform.localEulerAngles = Vector3.zero;
+        }
+
+
+        if (true/*方向キー入力していたらその方向へ動く*/)
+        {
+
+        }
+        else
+        {
+            //一番近い所へ向かう
+
+        }
+    }
+
+    private void HitMouse()
+    {
+        //別れさせる
+        if (HumanState.Boys == humanState)
+        {
+            //男だったら
+            isCoupling = false;
+            couplingHuman.isCoupling = false;
+            couplingHuman.SetWalk();
+            SetWalk();
+            transform.parent = humanPool.transform;
+            //管理しなおす
+            transform.position += new Vector3(0, -transform.position.y, 0);
+
+        }
+        else
+        {
+            isCoupling = false;
+            couplingHuman.isCoupling = false;
+            couplingHuman.SetWalk();
+            SetWalk();
+            couplingHuman.transform.parent = humanPool.transform;
+            transform.position += new Vector3(0, -transform.position.y, 0);
         }
     }
 
