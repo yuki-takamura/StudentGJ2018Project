@@ -13,6 +13,7 @@ public enum HumanState
 
 public class Human : MonoBehaviour
 {
+    [SerializeField]
     bool userSelect = false;
     bool isCoupling = false;
     public bool IsCoupling
@@ -45,6 +46,7 @@ public class Human : MonoBehaviour
 
 
 
+
     public HumanState GetHumanState
     {
         get
@@ -72,8 +74,22 @@ public class Human : MonoBehaviour
 
 
 
+
+    CharacterController characterController;
+
+    Vector3 velocity;
+
+    [SerializeField]
+    float walkSpeed = 1.0f;
+
+    Animator animator;
+
+
+
     void Start()
     {
+        characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
         SetWalk();
 
     }
@@ -81,15 +97,16 @@ public class Human : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (userSelect)
+
+        if (userSelect/* && isCoupling == false*/)
+        {
+            MoveController();
             return;
+        }
 
-        //if (isCoupling && humanState == HumanState.Boys)
-        //    return;
-        if (humanState == HumanState.Boys)
+
+        if (isCoupling && humanState == HumanState.Boys)
             return;
-
-
 
         //ランダムウォークを書く
 
@@ -98,9 +115,8 @@ public class Human : MonoBehaviour
         {
             SetWalk();
         }
-        transform.position += new Vector3(walkVec.x * moveLength, 0, walkVec.y * moveLength);
 
-
+        MoveAuto();
     }
 
     public void SetWalk()
@@ -111,25 +127,91 @@ public class Human : MonoBehaviour
         walkVec = new Vector2(Random.Range(-1.0f, 1f), Random.Range(-1.0f, 1f));
 
 
-        transform.position += new Vector3(walkVec.normalized.x * moveLength, 0, walkVec.normalized.y * moveLength);
+        //   transform.position += new Vector3(walkVec.normalized.x * moveLength, 0, walkVec.normalized.y * moveLength);
 
-        transform.rotation = Quaternion.LookRotation(transform.position +
-        (Vector3.right * (walkVec.x)) +
-        (Vector3.forward * (walkVec.y))
-        - transform.position);
+        //transform.rotation = Quaternion.LookRotation(transform.position +
+        //(Vector3.right * (walkVec.x)) +
+        //(Vector3.forward * (walkVec.y))
+        //- transform.position);
+
+        animator.SetFloat("Speed", velocity.magnitude);
+        transform.LookAt(transform.position + velocity);
+
+
+    }
+
+
+    private void MoveAuto()
+    {
+        velocity = new Vector3(walkVec.normalized.x * walkSpeed, 0.0f, walkVec.normalized.y * walkSpeed);
+
+        //後で消します
+        transform.position += new Vector3(0, -transform.position.y, 0);
+
+
+        if (characterController.isGrounded)
+        {
+            if (velocity.magnitude > 0.1f)
+            {
+                animator.SetFloat("Speed", velocity.magnitude);
+                transform.LookAt(transform.position + velocity);
+            }
+            else
+            {
+                animator.SetFloat("Speed", 0f);
+            }
+        }
+
+    //    Debug.Log(this.name + "   " + velocity);
+
+        characterController.Move(velocity * walkSpeed * Time.deltaTime);
+    }
+
+
+    public void MoveController()
+    {
+        // Joy-Con(R)
+        var h1 = Input.GetAxis("Horizontal 1");
+        var v1 = Input.GetAxis("Vertical 1");
+
+        velocity = new Vector3(v1, 0.0f, -h1);
+
+        //TODO デバッグ用　あとで消す
+        if (Input.GetKey(KeyCode.Joystick1Button10))
+        {
+            transform.position = Vector3.zero;
+        }
+
+        if (characterController.isGrounded)
+        {
+            if (velocity.magnitude > 0.1f)
+            {
+                animator.SetFloat("Speed", velocity.magnitude);
+                transform.LookAt(transform.position + velocity);
+            }
+            else
+            {
+                animator.SetFloat("Speed", 0f);
+            }
+        }
+
+        velocity.y += Physics.gravity.y * Time.deltaTime;
+        characterController.Move(velocity * walkSpeed * Time.deltaTime);
 
 
 
     }
 
 
-    private void OnCollisionEnter(Collision other)
+    void OnControllerColliderHit(ControllerColliderHit other)
     {
-        Debug.Log("OnCollisionEnter");
+        // hit.gameObjectで衝突したオブジェクト情報が得られる
         //プレイヤーが選択中で相手が性別違うなら
         //女性側で制御してしまう
-        if (other.collider.CompareTag(HumanTag)/*&& userSelect==true*/)
+      //  Debug.Log("コリダーなう=" + this.gameObject.name);
+        if (other.collider.CompareTag(HumanTag)&& userSelect==true&&isCoupling==false)
         {
+
             if (other.gameObject.GetComponent<Human>().GetHumanState == HumanState.Boys)
             {
                 //カップルにする
@@ -166,6 +248,7 @@ public class Human : MonoBehaviour
                 SetWalk();
                 transform.parent = humanPool.transform;
                 //管理しなおす
+                transform.position += new Vector3(0, -transform.position.y, 0);
 
             }
             else
@@ -175,6 +258,7 @@ public class Human : MonoBehaviour
                 couplingHuman.SetWalk();
                 SetWalk();
                 couplingHuman.transform.parent = humanPool.transform;
+                transform.position += new Vector3(0, -transform.position.y, 0);
             }
         }
         else
@@ -185,4 +269,11 @@ public class Human : MonoBehaviour
 
         }
     }
+
+
+    public void SetUserSelect()
+    {
+        userSelect = true;
+    }
+
 }
