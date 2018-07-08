@@ -49,7 +49,7 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
         }
     }
     // Use this for initialization
-    void Start()
+    public void StartGenerate()
     {
         for (int i = 0; i < HumanNumber; i++)
         {
@@ -63,10 +63,7 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
         SelectHuman();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
+
 
     public void SelectHuman()
     {

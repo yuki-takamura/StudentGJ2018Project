@@ -45,12 +45,13 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
     [SerializeField]
     Sprite secondNumberSprite = null;
 
-
+    [SerializeField]
+    Timer startTime = null;
 
 
     void Start()
     {
-        //   stopTime = true;
+           stopTime = true;
         stopTime = false;
 
         totalPoint = 0;
@@ -62,7 +63,20 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
 
     void Update()
     {
+        if (stopTime == true && nowSecondRound == true)
+            CheckInputStart();
+
         UpdateTime();
+    }
+
+    public void CheckInputStart()
+    {
+        if(true)//input推したら
+        {
+            //321をやる
+            startTime.gameObject.SetActive(true);
+            startTime.StartTime();
+        }
     }
 
     private void UpdateTime()
@@ -143,5 +157,11 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
         totalPoint = 0;
         limitTime = StartLimitTime;
         roundImage.sprite = secondNumberSprite;
+    }
+
+    public void StartTime()
+    {
+        stopTime = false;
+        HumanManager.Instance.StartGenerate();
     }
 }
