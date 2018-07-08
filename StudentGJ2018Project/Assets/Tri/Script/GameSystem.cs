@@ -17,6 +17,8 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
 
     bool stopTime = false;
 
+
+
     [SerializeField]//一旦
     bool nowSecondRound = false;
     public bool NowSecondRound//いい名前思いつかない
@@ -38,7 +40,10 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
     [SerializeField]
     Text towScoreText = null;
 
-
+    [SerializeField]
+    Image roundImage = null;
+    [SerializeField]
+    Sprite secondNumberSprite = null;
 
 
 
@@ -137,6 +142,6 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
         nowSecondRound = true;
         totalPoint = 0;
         limitTime = StartLimitTime;
-
+       // roundImage.sprite = secondNumberSprite;
     }
 }
