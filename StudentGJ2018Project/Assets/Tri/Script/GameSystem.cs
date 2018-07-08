@@ -45,13 +45,13 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
     [SerializeField]
     Sprite secondNumberSprite = null;
 
-
+    [SerializeField]
+    Timer startTime = null;
 
 
     void Start()
     {
-        //   stopTime = true;
-        stopTime = false;
+        stopTime = true;
 
         totalPoint = 0;
         limitTime = StartLimitTime;
@@ -62,7 +62,27 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
 
     void Update()
     {
+        if (stopTime == true && nowSecondRound == true)
+            CheckInputStart();
+
         UpdateTime();
+    }
+
+    public void CheckInputStart()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Joystick2Button0)
+             || Input.GetKeyDown(KeyCode.Joystick2Button1)
+             || Input.GetKeyDown(KeyCode.Joystick2Button2)
+             || Input.GetKeyDown(KeyCode.Joystick2Button3)
+          || Input.GetKeyDown(KeyCode.Joystick1Button0)
+                      || Input.GetKeyDown(KeyCode.Joystick1Button1)
+                      || Input.GetKeyDown(KeyCode.Joystick1Button2)
+                      || Input.GetKeyDown(KeyCode.Joystick1Button3))
+        {
+            //321をやる
+            startTime.StartTime();
+        }
     }
 
     private void UpdateTime()
@@ -93,10 +113,10 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
     public void Goal()
     {
         totalPoint += goalPoint;
-        if(nowSecondRound==false)
+        if (nowSecondRound == false)
         {
             onwScoreText.text = totalPoint.ToString();
-           
+
         }
         else
         {
@@ -106,11 +126,11 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
 
     public void GameOver()
     {
-        PlayerPrefs.SetInt("One",onePlayerPoint);
+        PlayerPrefs.SetInt("One", onePlayerPoint);
         PlayerPrefs.SetInt("Tow", towPlayerPoint);
 
-        Debug.Log("1p point="+onePlayerPoint);
-        Debug.Log("2p point="+towPlayerPoint);
+        Debug.Log("1p point=" + onePlayerPoint);
+        Debug.Log("2p point=" + towPlayerPoint);
 
 
         SceneManager.LoadScene("Result");
@@ -136,12 +156,21 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
         //321のやつ
         //操作交代させる
 
-       // stopTime = true;
+        stopTime = true;
         onePlayerPoint = totalPoint;
         limitTime = StartLimitTime;
         nowSecondRound = true;
         totalPoint = 0;
         limitTime = StartLimitTime;
-       // roundImage.sprite = secondNumberSprite;
+        roundImage.sprite = secondNumberSprite;
+
+        HumanManager.Instance.DeleteAll();
+        startTime.StopTime();
+    }
+
+    public void StartTime()
+    {
+        stopTime = false;
+        HumanManager.Instance.StartGenerate();
     }
 }
