@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GoalManager : SingletonMonoBehaviour<GoalManager>
 {
-    List<Goal> goalObject;
+    [SerializeField]
+    List<Goal> goalObject = new List<Goal>();
 
     Vector3 nearPoint;
 
@@ -13,18 +14,18 @@ public class GoalManager : SingletonMonoBehaviour<GoalManager>
     /// </summary>
     int num;
 
-    Vector3 GetNearGoalPosition(Vector3 humanPos)
+    public Vector3 GetNearGoalPosition(Vector3 humanPos)
     {
         if (goalObject.Count == 0)
             return Vector3.zero;
 
         float a = 100000000000000000;
 
-        for(int i = 0; i < goalObject.Count; i++)
+        for (int i = 0; i < goalObject.Count; i++)
         {
             float d = (humanPos - goalObject[i].transform.position).magnitude;
 
-            if(a > d)
+            if (a > d)
             {
                 d = a;
                 num = i;
@@ -34,13 +35,15 @@ public class GoalManager : SingletonMonoBehaviour<GoalManager>
         return goalObject[num].transform.position;
     }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
