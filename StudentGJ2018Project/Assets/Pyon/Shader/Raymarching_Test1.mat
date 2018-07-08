@@ -25,4 +25,4 @@ Material:
     m_Floats: []
     m_Colors:
     - _EmissiveColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 0.5955882, g: 1, b: 0.86612576, a: 1}
