@@ -75,8 +75,6 @@ public class Human : MonoBehaviour
     [SerializeField]
     float MinTime = 7f;
 
-    [SerializeField]
-    GameObject humanPool;
 
     CharacterController characterController;
     public CharacterController GetCharacterController
@@ -395,7 +393,7 @@ public class Human : MonoBehaviour
             couplingHuman.isCoupling = false;
             couplingHuman.SetWalk();
             SetWalk();
-            transform.parent = humanPool.transform;
+            transform.parent = HumanManager.Instance.transform;
             //管理しなおす
             transform.position += new Vector3(0, -transform.position.y, 0);
 
@@ -406,7 +404,7 @@ public class Human : MonoBehaviour
             couplingHuman.isCoupling = false;
             couplingHuman.SetWalk();
             SetWalk();
-            couplingHuman.transform.parent = humanPool.transform;
+            couplingHuman.transform.parent = HumanManager.Instance.transform;
             transform.position += new Vector3(0, -transform.position.y, 0);
         }
     }
