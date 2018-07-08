@@ -279,7 +279,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3044\u305A\u308C\u304B\u306E\u30DC\u30BF\u30F3\u3092\u304A\u3057\u3066\u306D"
+  m_Text: "\u30DC\u30BF\u30F3\u3092\u304A\u3057\u3066\u306D"
 --- !u!222 &307325222
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -297,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02dfe30688b0f9a46b9808b10eb20e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 307325221}
   isPlayerOne: 0
   canPlayGame: 0
 --- !u!1 &845595505
@@ -367,7 +368,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3044\u305A\u308C\u304B\u306E\u30DC\u30BF\u30F3\u3092\u304A\u3057\u3066\u306D"
+  m_Text: "\u30DC\u30BF\u30F3\u3092\u304A\u3057\u3066\u306D"
 --- !u!222 &845595508
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -385,6 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02dfe30688b0f9a46b9808b10eb20e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 845595507}
   isPlayerOne: 1
   canPlayGame: 0
 --- !u!1 &871800978
