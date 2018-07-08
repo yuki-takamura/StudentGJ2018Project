@@ -293,6 +293,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f34175383a772741a96225f415f4fe3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &218245191
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4809382316655008, guid: 285d17eeef8a60d4d9df7e6f26ab5b07, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809382316655008, guid: 285d17eeef8a60d4d9df7e6f26ab5b07, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 261.7097
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809382316655008, guid: 285d17eeef8a60d4d9df7e6f26ab5b07, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809382316655008, guid: 285d17eeef8a60d4d9df7e6f26ab5b07, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809382316655008, guid: 285d17eeef8a60d4d9df7e6f26ab5b07, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809382316655008, guid: 285d17eeef8a60d4d9df7e6f26ab5b07, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809382316655008, guid: 285d17eeef8a60d4d9df7e6f26ab5b07, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809382316655008, guid: 285d17eeef8a60d4d9df7e6f26ab5b07, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 285d17eeef8a60d4d9df7e6f26ab5b07, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &234167472
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: e88a2e6892a204b439087674e9593748, type: 2}
---- !u!21 &299178965
+--- !u!21 &414059848
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
