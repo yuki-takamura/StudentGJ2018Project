@@ -34,6 +34,8 @@ public class Human : MonoBehaviour
         set
         {
             isCoupling = value;
+            animator.SetBool("IsCoupling", value);
+
         }
     }
 
@@ -295,7 +297,7 @@ public class Human : MonoBehaviour
         couplingHuman.IsCoupling = true;
         couplingHuman.userSelect = false;
         this.userSelect = false;
-        this.isCoupling = true;
+        this.IsCoupling = true;
 
         if (this.humanState == HumanState.Boys)
         {
@@ -391,8 +393,8 @@ public class Human : MonoBehaviour
         if (HumanState.Boys == humanState)
         {
             //男だったら
-            isCoupling = false;
-            couplingHuman.isCoupling = false;
+            IsCoupling = false;
+            couplingHuman.IsCoupling = false;
             couplingHuman.SetWalk();
             SetWalk();
             transform.parent = humanPool.transform;
@@ -402,8 +404,8 @@ public class Human : MonoBehaviour
         }
         else
         {
-            isCoupling = false;
-            couplingHuman.isCoupling = false;
+            IsCoupling = false;
+            couplingHuman.IsCoupling = false;
             couplingHuman.SetWalk();
             SetWalk();
             couplingHuman.transform.parent = humanPool.transform;
