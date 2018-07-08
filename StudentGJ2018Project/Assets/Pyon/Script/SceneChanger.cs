@@ -32,8 +32,7 @@ public class SceneChanger : MonoBehaviour
     {
         //-の↓ボタン
         if (Input.GetKeyDown(KeyCode.Joystick1Button1)
-            || Input.GetKeyDown(KeyCode.Joystick2Button1)
-            || Input.GetKeyDown(KeyCode.Z))
+            || Input.GetKeyDown(KeyCode.Joystick2Button1))
         {
             firstTime = Time.time;
             isChangingScene = true;
