@@ -160,7 +160,7 @@ public class Human : MonoBehaviour
     {
         velocity = new Vector3(walkVec.normalized.x * walkSpeed, 0.0f, walkVec.normalized.y * walkSpeed);
 
-        //後で消します
+        //後で消します(?
         transform.position += new Vector3(0, -transform.position.y, 0);
 
 
@@ -188,13 +188,16 @@ public class Human : MonoBehaviour
         // Joy-Con(R)
         float h1;
         float v1;
+
         if (GameSystem.Instance.NowSecondRound == false)
         {
+            Debug.Log("JoyConR"+ Input.GetAxis(onePlayertH));
             h1 = Input.GetAxis(onePlayertH);
             v1 = Input.GetAxis(onePlayertV);
         }
         else
         {
+            Debug.Log("JoyConL");
             h1 = -Input.GetAxis(twoPlayertH);
             v1 = -Input.GetAxis(twoPlayertV);
         }
@@ -238,7 +241,7 @@ public class Human : MonoBehaviour
         if (other.collider.CompareTag(HumanTag) && userSelect == true && isCoupling == false)
         {
             Human human = other.gameObject.GetComponent<Human>();
-            if (this.GetHumanState == human.GetHumanState|| human.IsCoupling==true)
+            if (this.GetHumanState == human.GetHumanState || human.IsCoupling == true)
                 return;
 
             Coupling(human);
@@ -267,7 +270,7 @@ public class Human : MonoBehaviour
         //Debug.Log("当たりました=" + this.gameObject.name + "   " + other.gameObject.name);
         //カップルにする
         Debug.Log("カップルになりました");
-        SetWalkSpeed=HumanManager.Instance.GetNormalSpeed;
+        SetWalkSpeed = HumanManager.Instance.GetNormalSpeed;
         human.SetWalkSpeed = HumanManager.Instance.GetNormalSpeed;
 
         couplingHuman = human;
@@ -309,7 +312,7 @@ public class Human : MonoBehaviour
         }
 
 
-        if (true/*方向キー入力していたらその方向へ動く*/)
+        if (false/*方向キー入力していたらその方向へ動く*/)
         {
 
         }
@@ -317,11 +320,32 @@ public class Human : MonoBehaviour
         {
             //一番近い所へ向かう
 
+            if (humanState == HumanState.Boys)
+            {
+                Vector3 nearGoal = GoalManager.Instance.GetNearGoalPosition(transform.position);
+                Vector2 vec = new Vector2(nearGoal.x - transform.position.x, nearGoal.z - transform.position.z);
+
+                SetAutoMove(walkTime, vec);
+                walkTime = 100f;//壁、ゴールに当たるまで突き進むため
+            }
+            else
+            {
+                walkTime = 100f;//壁、ゴールに当たるまで突き進むため
+                Vector3 nearGoal = GoalManager.Instance.GetNearGoalPosition(transform.position);
+                walkVec = new Vector2(nearGoal.x - transform.position.x, nearGoal.z - transform.position.z);
+            }
         }
 
         //新しいプレイヤーを選ぶ
         HumanManager.Instance.SelectHuman();
     }
+
+    public void SetAutoMove(float time, Vector2 vec)
+    {
+        walkTime = time;
+        walkVec = vec;
+    }
+
 
     private void HitMouse()
     {
