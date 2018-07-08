@@ -4,6 +4,9 @@ using UnityEngine.UI;
 public class PlayerEntry : MonoBehaviour
 {
     [SerializeField]
+    Text text = null;
+
+    [SerializeField]
     bool isPlayerOne = true;
 
     public bool canPlayGame = false;
@@ -42,11 +45,11 @@ public class PlayerEntry : MonoBehaviour
 
         if(canPlayGame)
         {
-            GetComponent<Text>().text = "準備OK!!!!";
+            this.text.text = "準備OK!!!!";
         }
         else
         {
-            GetComponent<Text>().text = "ボタンをおしてね";
+            this.text.text = "ボタンをおしてね";
         }
 	}
 }
