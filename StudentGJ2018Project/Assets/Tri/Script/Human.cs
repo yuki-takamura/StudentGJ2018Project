@@ -192,27 +192,27 @@ public class Human : MonoBehaviour
         float h1 = 0;
         float v1 = 0;
 
-        //if (GameSystem.Instance.NowSecondRound == false)
-        //{
-        //    Debug.Log("JoyConR" + Input.GetAxis(onePlayertH));
-        //    h1 = Input.GetAxis(onePlayertH);
-        //    v1 = Input.GetAxis(onePlayertV);
-        //}
-        //else
-        //{
-        //    Debug.Log("JoyConL");
-        //    h1 = -Input.GetAxis(twoPlayertH);
-        //    v1 = -Input.GetAxis(twoPlayertV);
-        //}
+        if (GameSystem.Instance.NowSecondRound == false)
+        {
+            Debug.Log("JoyConR" + Input.GetAxis(onePlayertH));
+            h1 = Input.GetAxis(onePlayertH);
+            v1 = Input.GetAxis(onePlayertV);
+        }
+        else
+        {
+            Debug.Log("JoyConL" + Input.GetAxis(twoPlayertH));
+            h1 = -Input.GetAxis(twoPlayertH);
+            v1 = -Input.GetAxis(twoPlayertV);
+        }
 
-        if (Input.GetKey(KeyCode.UpArrow))
-            h1 = -1;
-        else if (Input.GetKey(KeyCode.DownArrow))
-            h1 = 1;
-        else if (Input.GetKey(KeyCode.RightArrow))
-            v1 = 1;
-        else if (Input.GetKey(KeyCode.LeftArrow))
-            v1 = -1;
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //    h1 = -1;
+        //else if (Input.GetKey(KeyCode.DownArrow))
+        //    h1 = 1;
+        //else if (Input.GetKey(KeyCode.RightArrow))
+        //    v1 = 1;
+        //else if (Input.GetKey(KeyCode.LeftArrow))
+        //    v1 = -1;
 
 
 
