@@ -63,8 +63,14 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
         SelectHuman();
     }
 
-
-
+    public void DeleteAll()
+    {
+        for(int i= humans.Count-1; i>=0;i--)
+        {
+            Destroy(humans[i].gameObject);
+        }
+        humans.Clear();
+    }
     public void SelectHuman()
     {
         if (humans.Count == 0)
