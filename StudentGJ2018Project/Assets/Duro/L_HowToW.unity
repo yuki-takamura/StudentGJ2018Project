@@ -754,6 +754,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -47.2, z: 54.8}
+--- !u!1001 &1426025080
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4323379981122482, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323379981122482, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323379981122482, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323379981122482, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323379981122482, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323379981122482, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323379981122482, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323379981122482, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137266256874740, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+      propertyPath: m_Name
+      value: SceneManager (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114902294363846170, guid: 00ce8d55dc639e34fb371be70a945b0c,
+        type: 2}
+      propertyPath: nextSceneName
+      value: M_MoveTest
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1457409750
 Prefab:
   m_ObjectHideFlags: 0

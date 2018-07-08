@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ Prefab:
     - target: {fileID: 114902294363846170, guid: 00ce8d55dc639e34fb371be70a945b0c,
         type: 2}
       propertyPath: nextSceneName
-      value: M_MoveTest
+      value: PlayerEntry
       objectReference: {fileID: 0}
     - target: {fileID: 114902294363846170, guid: 00ce8d55dc639e34fb371be70a945b0c,
         type: 2}
@@ -530,6 +530,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: e88a2e6892a204b439087674e9593748, type: 2}
+--- !u!21 &269194216
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Raymarching/Object
+  m_Shader: {fileID: 4800000, guid: f08664362c8b1c348aad9b7972b143ca, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
+    - _EmissiveColor: {r: 1, g: 0.5, b: 1, a: 0}
+    - _SpecularColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!1 &449396229
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,33 +723,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 822750465}
---- !u!21 &1348074182
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Raymarching/Object
-  m_Shader: {fileID: 4800000, guid: f08664362c8b1c348aad9b7972b143ca, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
-    - _EmissiveColor: {r: 1, g: 0.5, b: 1, a: 0}
-    - _SpecularColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!1 &1550920408
 GameObject:
   m_ObjectHideFlags: 0
