@@ -142,6 +142,6 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
         nowSecondRound = true;
         totalPoint = 0;
         limitTime = StartLimitTime;
-       // roundImage.sprite = secondNumberSprite;
+        roundImage.sprite = secondNumberSprite;
     }
 }

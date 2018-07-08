@@ -19,7 +19,11 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
     float stageMax = 1;
 
     [SerializeField]
-   public GameObject humanPool = null;
+    float NotGenerateRange = 3;
+
+
+    [SerializeField]
+    public GameObject humanPool = null;
 
 
     [SerializeField]
@@ -53,8 +57,8 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
                 InstantiateHuman(true);
             else
                 InstantiateHuman(false);
-            humans[humans.Count - 1].SetWalkSpeed=normalSpeed;
-            
+            humans[humans.Count - 1].SetWalkSpeed = normalSpeed;
+
         }
         SelectHuman();
     }
@@ -74,10 +78,10 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
         while (true)
         {
             int r = Random.Range(0, humans.Count);
-            if (humans[r].IsCoupling==false)
+            if (humans[r].IsCoupling == false)
             {
                 humans[r].SetUserSelect();
-                humans[r].SetWalkSpeed=playerSpeed;
+                humans[r].SetWalkSpeed = playerSpeed;
                 break;
             }
         }
@@ -113,7 +117,7 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
             return;
         }
 
-        if(human.GetHumanState==HumanState.Boys)
+        if (human.GetHumanState == HumanState.Boys)
             InstantiateHuman(false);
         else
             InstantiateHuman(true);
@@ -126,8 +130,18 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
     }
     public void InstantiateHuman(bool generateChika)
     {
-        float x = Random.Range(stageMin, stageMax);
-        float z = Random.Range(stageMin, stageMax);
+        float x;
+        float z;
+        
+       while(true)
+        {
+            x = Random.Range(stageMin, stageMax);
+            z = Random.Range(stageMin, stageMax);
+            if((x>NotGenerateRange|| x < -NotGenerateRange)&& (z > NotGenerateRange || z < -NotGenerateRange))
+            {
+                break;
+            }
+        }
         Human human;
         if (generateChika)
             human = Instantiate(chikaPrefab, new Vector3(x, 0.0f, z), Quaternion.identity).GetComponent<Human>();
