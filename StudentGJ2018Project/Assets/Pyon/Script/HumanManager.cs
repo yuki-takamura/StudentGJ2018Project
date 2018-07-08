@@ -106,7 +106,24 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
         InstantiateHuman(false);
 
     }
+    public void DeleteHuman(Human human)
+    {
+        if (humans.Count == 0)
+        {
+            return;
+        }
 
+        if(human.GetHumanState==HumanState.Boys)
+            InstantiateHuman(false);
+        else
+            InstantiateHuman(true);
+
+        foreach (Human h in humans)
+        {
+            if (h == human)
+                Destroy(human.gameObject);
+        }
+    }
     public void InstantiateHuman(bool generateChika)
     {
         float x = Random.Range(stageMin, stageMax);
