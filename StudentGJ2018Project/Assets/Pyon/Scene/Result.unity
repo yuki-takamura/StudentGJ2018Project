@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1383707828}
-  m_IndirectSpecularColor: {r: 0.74343115, g: 0.7772442, b: 0.8106208, a: 1}
+  m_IndirectSpecularColor: {r: 0.741959, g: 0.77602196, b: 0.80954844, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 13935530}
   - component: {fileID: 13935529}
   - component: {fileID: 13935528}
+  - component: {fileID: 13935532}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -211,6 +212,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &13935532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 13935527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7230bd3df4c97f4cb22ee0037412d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText:
+  - {fileID: 1286460652}
+  - {fileID: 1572062038}
+  playerWinLoses:
+  - {fileID: 1969096168}
+  - {fileID: 408567430}
 --- !u!1 &408567428
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +278,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winImage: {fileID: 2800000, guid: fda3f2dd1d0532c41acfd8513a71d300, type: 3}
   loseImage: {fileID: 2800000, guid: 1f949e162da777d4fbb44ad1dfe1b840, type: 3}
-  isWinner: 0
 --- !u!114 &408567431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,7 +823,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winImage: {fileID: 2800000, guid: fda3f2dd1d0532c41acfd8513a71d300, type: 3}
   loseImage: {fileID: 2800000, guid: 1f949e162da777d4fbb44ad1dfe1b840, type: 3}
-  isWinner: 0
 --- !u!114 &1969096169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,7 +842,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: fda3f2dd1d0532c41acfd8513a71d300, type: 3}
+  m_Texture: {fileID: 2800000, guid: 1f949e162da777d4fbb44ad1dfe1b840, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

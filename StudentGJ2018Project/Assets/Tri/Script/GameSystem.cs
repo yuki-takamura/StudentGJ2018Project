@@ -101,7 +101,14 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
 
     public void GameOver()
     {
-        // SceneManager.LoadScene("Result");
+        PlayerPrefs.SetInt("One",onePlayerPoint);
+        PlayerPrefs.SetInt("Tow", towPlayerPoint);
+
+        Debug.Log("1p point="+onePlayerPoint);
+        Debug.Log("2p point="+towPlayerPoint);
+
+
+        SceneManager.LoadScene("Result");
     }
 
     private void EndTurn()
@@ -117,17 +124,19 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
         }
     }
 
+
+
     private void ChangePlayer()
     {
         //321のやつ
         //操作交代させる
 
-        stopTime = true;
+       // stopTime = true;
         onePlayerPoint = totalPoint;
         limitTime = StartLimitTime;
         nowSecondRound = true;
-
-        
+        totalPoint = 0;
+        limitTime = StartLimitTime;
 
     }
 }

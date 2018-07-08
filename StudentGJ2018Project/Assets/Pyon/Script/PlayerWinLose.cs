@@ -10,15 +10,13 @@ public class PlayerWinLose : MonoBehaviour
 
     [SerializeField]
     Texture2D loseImage = null;
-
-    public bool isWinner = false;
-
+    
     Texture2D showImage;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    public void SetResult(bool isWinner)
     {
-		if(isWinner)
+        if (isWinner)
         {
             showImage = winImage;
         }
@@ -28,11 +26,11 @@ public class PlayerWinLose : MonoBehaviour
         }
 
         GetComponent<RawImage>().texture = showImage;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-		
-	}
+
+    }
 }
