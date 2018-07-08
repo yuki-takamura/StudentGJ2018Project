@@ -67,9 +67,12 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
     {
         for(int i= humans.Count-1; i>=0;i--)
         {
-            Destroy(humans[i].gameObject);
+            Human h = humans[i];
+            Destroy(h.gameObject);
+            humans.Remove(h);
+           
         }
-        humans.Clear();
+      
     }
     public void SelectHuman()
     {

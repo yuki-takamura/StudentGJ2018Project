@@ -1152,6 +1152,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198939480229724562, guid: bc3ac4e721800194ab3eff89360ca7aa,
+        type: 2}
+      propertyPath: InitialModule.maxNumParticles
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198939480229724562, guid: bc3ac4e721800194ab3eff89360ca7aa,
+        type: 2}
+      propertyPath: randomSeed
+      value: 219621991
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc3ac4e721800194ab3eff89360ca7aa, type: 2}
   m_IsPrefabParent: 0
@@ -2190,7 +2200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f9f5410fe16c842a79561cdeb7f078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartLimitTime: 35
+  StartLimitTime: 10
   goalPoint: 20
   nowSecondRound: 0
   timetText: {fileID: 1835503894}

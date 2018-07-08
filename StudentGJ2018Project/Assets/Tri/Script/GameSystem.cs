@@ -153,6 +153,7 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
 
     private void ChangePlayer()
     {
+        Debug.Log("チェンジさせます");
         //321のやつ
         //操作交代させる
 
@@ -166,6 +167,9 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
 
         HumanManager.Instance.DeleteAll();
         startTime.StopTime();
+
+
+
     }
 
     public void StartTime()
