@@ -77,8 +77,6 @@ public class Human : MonoBehaviour
     [SerializeField]
     float MinTime = 7f;
 
-    [SerializeField]
-    GameObject humanPool;
 
     CharacterController characterController;
     public CharacterController GetCharacterController
@@ -194,27 +192,27 @@ public class Human : MonoBehaviour
         float h1 = 0;
         float v1 = 0;
 
-        //if (GameSystem.Instance.NowSecondRound == false)
-        //{
-        //    Debug.Log("JoyConR" + Input.GetAxis(onePlayertH));
-        //    h1 = Input.GetAxis(onePlayertH);
-        //    v1 = Input.GetAxis(onePlayertV);
-        //}
-        //else
-        //{
-        //    Debug.Log("JoyConL");
-        //    h1 = -Input.GetAxis(twoPlayertH);
-        //    v1 = -Input.GetAxis(twoPlayertV);
-        //}
+        if (GameSystem.Instance.NowSecondRound == false)
+        {
+            Debug.Log("JoyConR" + Input.GetAxis(onePlayertH));
+            h1 = Input.GetAxis(onePlayertH);
+            v1 = Input.GetAxis(onePlayertV);
+        }
+        else
+        {
+            Debug.Log("JoyConL" + Input.GetAxis(twoPlayertH));
+            h1 = -Input.GetAxis(twoPlayertH);
+            v1 = -Input.GetAxis(twoPlayertV);
+        }
 
-        if (Input.GetKey(KeyCode.UpArrow))
-            h1 = -1;
-        else if (Input.GetKey(KeyCode.DownArrow))
-            h1 = 1;
-        else if (Input.GetKey(KeyCode.RightArrow))
-            v1 = 1;
-        else if (Input.GetKey(KeyCode.LeftArrow))
-            v1 = -1;
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //    h1 = -1;
+        //else if (Input.GetKey(KeyCode.DownArrow))
+        //    h1 = 1;
+        //else if (Input.GetKey(KeyCode.RightArrow))
+        //    v1 = 1;
+        //else if (Input.GetKey(KeyCode.LeftArrow))
+        //    v1 = -1;
 
 
 
@@ -397,7 +395,7 @@ public class Human : MonoBehaviour
             couplingHuman.IsCoupling = false;
             couplingHuman.SetWalk();
             SetWalk();
-            transform.parent = humanPool.transform;
+            transform.parent = HumanManager.Instance.transform;
             //管理しなおす
             transform.position += new Vector3(0, -transform.position.y, 0);
 
@@ -408,7 +406,7 @@ public class Human : MonoBehaviour
             couplingHuman.IsCoupling = false;
             couplingHuman.SetWalk();
             SetWalk();
-            couplingHuman.transform.parent = humanPool.transform;
+            couplingHuman.transform.parent = HumanManager.Instance.transform;
             transform.position += new Vector3(0, -transform.position.y, 0);
         }
     }

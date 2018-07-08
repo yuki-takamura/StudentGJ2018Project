@@ -19,7 +19,7 @@ public class HumanManager : SingletonMonoBehaviour<HumanManager>
     float stageMax = 1;
 
     [SerializeField]
-    GameObject humanPool = null;
+   public GameObject humanPool = null;
 
 
     [SerializeField]

@@ -22,8 +22,8 @@ public class SceneChanger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        mainCamera = Camera.main;
-        mainCamera.GetComponent<SC_CustomPostEffectBehaviour>().postEffectMaterial.SetFloat("_Threshold", 0);
+        //mainCamera = Camera.main;
+        //mainCamera.GetComponent<SC_CustomPostEffectBehaviour>().postEffectMaterial.SetFloat("_Threshold", 0);
         counter = 0;
 	}
 	
@@ -41,11 +41,12 @@ public class SceneChanger : MonoBehaviour
 
         if (isChangingScene)
         {
+            SceneManager.LoadScene(nextSceneName);
             counter = (Time.time - firstTime) * fadeSpeed;
-            mainCamera.GetComponent<SC_CustomPostEffectBehaviour>().postEffectMaterial.SetFloat("_Threshold", counter);
+           // mainCamera.GetComponent<SC_CustomPostEffectBehaviour>().postEffectMaterial.SetFloat("_Threshold", counter);
         }
 
-        if (mainCamera.GetComponent<SC_CustomPostEffectBehaviour>().postEffectMaterial.GetFloat("_Threshold") >= 1)
-            SceneManager.LoadScene(nextSceneName);
+        //if (mainCamera.GetComponent<SC_CustomPostEffectBehaviour>().postEffectMaterial.GetFloat("_Threshold") >= 1)
+        //    SceneManager.LoadScene(nextSceneName);
     }
 }
