@@ -46,7 +46,7 @@ public class Mouse : MonoBehaviour
             v2 = -Input.GetAxis(onePlayertH);
         }
 
-        transform.position += new Vector3(h2 * 0.1f, 0, v2 * 0.1f);
+        transform.position += new Vector3(h2 * walkSpeed, 0, v2 * walkSpeed);
 
 
         velocity = new Vector3(h2, 0.0f,v2 );

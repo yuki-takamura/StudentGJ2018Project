@@ -19,11 +19,11 @@ public class Result : MonoBehaviour {
         if(onw>tow)//1P勝ち
         {
             //負けはもとから
-            playerWinLoses[0].SetResult(true);
+            playerWinLoses[1].SetResult(true);
         }
         else if(onw < tow)
         {
-            playerWinLoses[1].SetResult(true);
+            playerWinLoses[0].SetResult(true);
 
         }
         scoreText[0].text = onw.ToString();

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameSystem : SingletonMonoBehaviour<GameSystem>
 {
@@ -17,7 +18,8 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
 
     bool stopTime = false;
 
-
+    [SerializeField]
+    Image change = null;
 
     [SerializeField]//一旦
     bool nowSecondRound = false;
@@ -157,19 +159,24 @@ public class GameSystem : SingletonMonoBehaviour<GameSystem>
         //321のやつ
         //操作交代させる
 
-        stopTime = true;
+        //stopTime = true;
         onePlayerPoint = totalPoint;
         limitTime = StartLimitTime;
         nowSecondRound = true;
         totalPoint = 0;
-        limitTime = StartLimitTime;
         roundImage.sprite = secondNumberSprite;
 
-        HumanManager.Instance.DeleteAll();
-        startTime.StopTime();
+        //HumanManager.Instance.DeleteAll();
+        // startTime.StopTime();
 
+        change.gameObject.SetActive(true);
+        StartCoroutine(ChangeImage());
+    }
 
-
+    private IEnumerator ChangeImage()
+    {
+        yield return new WaitForSeconds(1);
+        change.gameObject.SetActive(false);
     }
 
     public void StartTime()

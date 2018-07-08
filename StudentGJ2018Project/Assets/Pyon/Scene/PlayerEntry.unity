@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ Prefab:
     - target: {fileID: 114902294363846170, guid: 00ce8d55dc639e34fb371be70a945b0c,
         type: 2}
       propertyPath: nextSceneName
-      value: M_MoveTest
+      value: L_HowToW
       objectReference: {fileID: 0}
     - target: {fileID: 114902294363846170, guid: 00ce8d55dc639e34fb371be70a945b0c,
         type: 2}
@@ -254,6 +254,10 @@ Prefab:
         type: 2}
       propertyPath: nextSceneName
       value: L_HowToW
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137266256874740, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00ce8d55dc639e34fb371be70a945b0c, type: 2}
@@ -627,7 +631,7 @@ MonoBehaviour:
   child: {fileID: 1647380851}
   isPlayerOne: 1
   canPlayGame: 0000
-  nextSceneName: 
+  nextSceneName: L_HowToW
 --- !u!114 &1747910033 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114573348078508982, guid: d168224066230ac408ed2b6eccc74b80,
