@@ -1,34 +1,23 @@
 fileFormatVersion: 2
-guid: 739ac1feec0cdcc47ab3bce3f0ab4e44
-timeCreated: 1531007809
+guid: ea118a558681a2143afd499fad0c9e7f
+timeCreated: 1531012809
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: M_Fountain
-    2100002: M_Water
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCylinder1
+    4300000: model
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Fountain
-    second: {fileID: 2100000, guid: bbd0c9b62a0766a48a670a004a6919bb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Water
-    second: {fileID: 2100000, guid: c1a09b4fe5b4ae9409d22635c15bce39, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
