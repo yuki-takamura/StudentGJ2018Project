@@ -188,21 +188,53 @@ public class Human : MonoBehaviour
 
     public void MoveController()
     {
+        Vector2 moveAmount = Vector2.zero;
+
         // Joy-Con(R)
         float h1 = 0;
         float v1 = 0;
 
         if (GameSystem.Instance.NowSecondRound == false)
         {
-            Debug.Log("JoyConR" + Input.GetAxis(onePlayertH));
-            h1 = Input.GetAxis(onePlayertH);
-            v1 = Input.GetAxis(onePlayertV);
+            //Debug.Log("JoyConR" + Input.GetAxis(onePlayertH));
+            //h1 = Input.GetAxis(onePlayertH);
+            //v1 = Input.GetAxis(onePlayertV);
+
+            if (Input.GetKey(KeyCode.S))
+                moveAmount.x = -1;
+
+            if (Input.GetKey(KeyCode.W))
+                moveAmount.x = 1;
+
+            if (Input.GetKey(KeyCode.A))
+                moveAmount.y = -1;
+
+            if (Input.GetKey(KeyCode.D))
+                moveAmount.y = 1;
+
+            h1 = -moveAmount.x;
+            v1 = moveAmount.y;
         }
         else
         {
-            Debug.Log("JoyConL" + Input.GetAxis(twoPlayertH));
-            h1 = -Input.GetAxis(twoPlayertH);
-            v1 = -Input.GetAxis(twoPlayertV);
+            //Debug.Log("JoyConL" + Input.GetAxis(twoPlayertH));
+            //h1 = -Input.GetAxis(twoPlayertH);
+            //v1 = -Input.GetAxis(twoPlayertV);
+
+            if (Input.GetKey(KeyCode.UpArrow))
+                moveAmount.x = 1;
+
+            if (Input.GetKey(KeyCode.DownArrow))
+                moveAmount.x = -1;
+
+            if (Input.GetKey(KeyCode.RightArrow))
+                moveAmount.y = 1;
+
+            if (Input.GetKey(KeyCode.LeftArrow))
+                moveAmount.y = -1;
+
+            h1 = -moveAmount.x;
+            v1 = moveAmount.y;
         }
 
         //if (Input.GetKey(KeyCode.UpArrow))
@@ -219,12 +251,6 @@ public class Human : MonoBehaviour
 
         velocity = new Vector3(v1, 0.0f, -h1);
 
-        //TODO デバッグ用　あとで消す
-        if (Input.GetKey(KeyCode.Joystick1Button10))
-        {
-            transform.position = Vector3.zero;
-        }
-
         if (characterController.isGrounded)
         {
             if (velocity.magnitude > 0.1f)
@@ -240,9 +266,6 @@ public class Human : MonoBehaviour
 
         velocity.y += Physics.gravity.y * Time.deltaTime;
         characterController.Move(velocity * walkSpeed * Time.deltaTime);
-
-
-
     }
 
 

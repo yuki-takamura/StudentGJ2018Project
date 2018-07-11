@@ -35,7 +35,11 @@ public class ActiveSceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Joystick2Button0)
                 || Input.GetKeyDown(KeyCode.Joystick2Button1)
                 || Input.GetKeyDown(KeyCode.Joystick2Button2)
-                || Input.GetKeyDown(KeyCode.Joystick2Button3))
+                || Input.GetKeyDown(KeyCode.Joystick2Button3)
+                || Input.GetKeyDown(KeyCode.LeftArrow)
+                || Input.GetKeyDown(KeyCode.RightArrow)
+                || Input.GetKeyDown(KeyCode.UpArrow)
+                || Input.GetKeyDown(KeyCode.DownArrow))
         {
             canPlayGame[0] = true;
         }
@@ -43,7 +47,11 @@ public class ActiveSceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Joystick1Button0)
                 || Input.GetKeyDown(KeyCode.Joystick1Button1)
                 || Input.GetKeyDown(KeyCode.Joystick1Button2)
-                || Input.GetKeyDown(KeyCode.Joystick1Button3))
+                || Input.GetKeyDown(KeyCode.Joystick1Button3)
+                || Input.GetKeyDown(KeyCode.A)
+                || Input.GetKeyDown(KeyCode.S)
+                || Input.GetKeyDown(KeyCode.D)
+                || Input.GetKeyDown(KeyCode.W))
         {
             canPlayGame[1] = true;
         }
@@ -75,7 +83,15 @@ public class ActiveSceneManager : MonoBehaviour
                 || Input.GetKeyDown(KeyCode.Joystick1Button0)
                 || Input.GetKeyDown(KeyCode.Joystick1Button1)
                 || Input.GetKeyDown(KeyCode.Joystick1Button2)
-                || Input.GetKeyDown(KeyCode.Joystick1Button3))
+                || Input.GetKeyDown(KeyCode.Joystick1Button3)
+                || Input.GetKeyDown(KeyCode.LeftArrow)
+                || Input.GetKeyDown(KeyCode.RightArrow)
+                || Input.GetKeyDown(KeyCode.UpArrow)
+                || Input.GetKeyDown(KeyCode.DownArrow)
+                || Input.GetKeyDown(KeyCode.A)
+                || Input.GetKeyDown(KeyCode.S)
+                || Input.GetKeyDown(KeyCode.D)
+                || Input.GetKeyDown(KeyCode.W))
             {
                 SceneManager.LoadScene(nextSceneName);
             }

@@ -32,18 +32,42 @@ public class Mouse : MonoBehaviour
         // Joy-Con(L)        
         float h2;
         float v2;
+        Vector2 moveAmount = Vector2.zero;
+
         if (GameSystem.Instance.NowSecondRound == false)
         {
-            Debug.Log("JoyConL" + Input.GetAxis(twoPlayertH));
-            h2 = -Input.GetAxis(twoPlayertV);
-            v2 = Input.GetAxis(twoPlayertH);
+            if (Input.GetKey(KeyCode.LeftArrow))
+                moveAmount.x = 1;
+
+            if (Input.GetKey(KeyCode.RightArrow))
+                moveAmount.x = -1;
+
+            if (Input.GetKey(KeyCode.UpArrow))
+                moveAmount.y = 1;
+
+            if (Input.GetKey(KeyCode.DownArrow))
+                moveAmount.y = -1;
+
+            h2 = -moveAmount.x;
+            v2 = moveAmount.y;
 
         }
         else
         {
-            Debug.Log("JoyConL" + Input.GetAxis(onePlayertV));
-            h2 = Input.GetAxis(onePlayertV);
-            v2 = -Input.GetAxis(onePlayertH);
+            if (Input.GetKey(KeyCode.D))
+                moveAmount.x = -1;
+
+            if (Input.GetKey(KeyCode.A))
+                moveAmount.x = 1;
+
+            if (Input.GetKey(KeyCode.S))
+                moveAmount.y = -1;
+
+            if (Input.GetKey(KeyCode.W))
+                moveAmount.y = 1;
+
+            h2 = -moveAmount.x;
+            v2 = moveAmount.y;
         }
 
         transform.position += new Vector3(h2 * walkSpeed, 0, v2 * walkSpeed);
@@ -63,11 +87,6 @@ public class Mouse : MonoBehaviour
 
 
         return;
-        //TODO デバッグ用　あとで消す
-        if (Input.GetKey(KeyCode.Joystick2Button11))
-        {
-            transform.position = Vector3.zero;
-        }
 
         if (characterController.isGrounded)
         {
